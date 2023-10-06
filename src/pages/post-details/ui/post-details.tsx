@@ -11,7 +11,14 @@ const PostDetails = () => {
   return (
     <main className="post-details">
       <h2 className="page-title">Post Details</h2>
-      {data && <PostDisplayCard post={data} mode="big" />}
+      {data && (
+        <PostDisplayCard
+          post={data}
+          mode="big"
+          buttonText="Back"
+          buttonTarget="/"
+        />
+      )}
     </main>
   );
 };
