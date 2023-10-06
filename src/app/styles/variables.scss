@@ -1,0 +1,9 @@
+:root {
+  --text-color: #000000;
+  --background-color: #FAFAFA;
+  --grey-text-color: #282828;
+  --grey-line-color: #ccc68a;
+  --highlight-color: #F14A16;
+  --text-shadow: drop-shadow(2px 2px 4px var(--grey-text-color));
+  --div-shadow: drop-shadow(1px 1px 3px var(--grey-text-color));
+}

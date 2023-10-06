@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <ReduxStoreProvider>
-        <div className="App">
+        <div className="app">
           <Routing />
         </div>
       </ReduxStoreProvider>

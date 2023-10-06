@@ -7,3 +7,30 @@ html {
 *::after {
   box-sizing: inherit;
 }
+
+body {
+  margin: 0;
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 20px;
+  background-color: var(--background-color);
+}
+
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.rounded-corners-and-shadows {
+  border-radius: 10px;
+  filter: var(--div-shadow);
+}
+
+@media only screen and (max-width: 1080px) {
+  body {
+    font-size: 16px;
+  }
+
+  .main-wrapper {
+    width: 95%;
+  }
+}
