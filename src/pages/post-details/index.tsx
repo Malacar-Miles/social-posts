@@ -1,5 +1,2 @@
-const PostDetails = () => {
-  return(<div className="post-details">Placeholder Post Details Page</div>);
-};
-
+import PostDetails from "./ui/post-details";
 export default PostDetails;
