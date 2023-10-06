@@ -7,6 +7,7 @@ const PostsFeed = () => {
 
   return (
     <main className="posts-feed">
+      <h2 className="page-title">All Posts</h2>
       {data?.map((post) => (
         <article className="post-feed-item" key={post.id}>
           <PostDisplayCard

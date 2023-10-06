@@ -2,8 +2,22 @@
   filter: var(--div-shadow);
   background-color: var(--background-color);
   border-radius: 10px;
-  padding: 15px 30px 10px 30px;
+  padding: 15px 0.8em 10px 0.8em;
   width: 100%;
+  display: flex;
+  gap: 0.8em;
+  justify-content: space-between;
+
+  .post-id {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 1.4em;
+  }
 
   &.full-page {
     min-height: 70vh;
@@ -32,5 +46,17 @@
     display: block;
     font-style: italic;
     text-align: right;
+  }
+
+  .post-wrapper {
+    width: 95%;
+
+    @media only screen and (max-width: 700px) {
+      width: 92%;
+    }
+
+    @media only screen and (max-width: 400px) {
+      width: 88%;
+    }
   }
 }
