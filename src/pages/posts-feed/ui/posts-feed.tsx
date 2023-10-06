@@ -9,7 +9,7 @@ const PostsFeed = () => {
     <main className="posts-feed">
       {data?.map((post) => (
         <article className="post-feed-item" id={post.id} key={post.id}>
-          <PostDisplayCard post={post} />
+          <PostDisplayCard post={post} mode="small" />
         </article>
       ))}
     </main>
