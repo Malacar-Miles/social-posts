@@ -1,28 +1,18 @@
+import "./posts-feed.scss";
 import { useGetAllPostsQuery } from "entities/post";
+import PostDisplayCard from "widgets/post-display-card";
 
 const PostsFeed = () => {
   const { data } = useGetAllPostsQuery();
 
   return (
-    <div className="posts-feed">
+    <main className="posts-feed">
       {data?.map((post) => (
-        <div className="post-feed-item" key={post.id}>
-          <p>
-            <b>Post Id:</b> {post.id}
-          </p>
-          <p>
-            <b>Title:</b> {post.title}
-          </p>
-          <p>
-            <b>Body:</b> {post.body}
-          </p>
-          <p>
-            <b>User Id:</b> {post.userId}
-          </p>
-          <br />
-        </div>
+        <article className="post-feed-item" id={post.id} key={post.id}>
+          <PostDisplayCard post={post} />
+        </article>
       ))}
-    </div>
+    </main>
   );
 };
 

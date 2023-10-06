@@ -20,11 +20,6 @@ body {
   margin: 0 auto;
 }
 
-.rounded-corners-and-shadows {
-  border-radius: 10px;
-  filter: var(--div-shadow);
-}
-
 @media only screen and (max-width: 1080px) {
   body {
     font-size: 16px;

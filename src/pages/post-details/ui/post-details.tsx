@@ -1,24 +1,16 @@
 import { useGetPostQuery } from "entities/post";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import PostDisplayCard from "widgets/post-display-card";
 
 const PostDetails = () => {
   const { postId } = useParams();
-  const { data } = useGetPostQuery(postId);
+  const navigate = useNavigate();
+  const { data, isError } = useGetPostQuery(postId);
+  if (isError === true) navigate("/notfound");
   return (
-    <div className="post-details">
-      <p>
-        <b>Post Id:</b> {data?.id}
-      </p>
-      <p>
-        <b>Title:</b> {data?.title}
-      </p>
-      <p>
-        <b>Body:</b> {data?.body}
-      </p>
-      <p>
-        <b>User Id:</b> {data?.userId}
-      </p>
-    </div>
+    <main className="post-details">
+      {data && <PostDisplayCard post={data} />}
+    </main>
   );
 };
 

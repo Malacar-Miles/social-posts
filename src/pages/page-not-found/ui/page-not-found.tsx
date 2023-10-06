@@ -1,6 +1,10 @@
+import "./page-not-found.scss";
+
 const PageNotFound = () => {
   return(
-    <div className="page-not-found">Placeholder 404 Page</div>
+    <main className="page-not-found">
+      <h2 className="error-message">Content Not Found or Failed to Load</h2>
+    </main>
   );
 };
 
