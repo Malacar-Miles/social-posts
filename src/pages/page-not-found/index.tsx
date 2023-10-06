@@ -1,7 +1,2 @@
-const PageNotFound = () => {
-  return(
-    <div className="page-not-found">Placeholder 404 Page</div>
-  );
-};
-
+import PageNotFound from "./ui/page-not-found";
 export default PageNotFound;

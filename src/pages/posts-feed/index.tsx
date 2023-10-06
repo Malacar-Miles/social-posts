@@ -1,5 +1,2 @@
-const PostsFeed = () => {
-  return(<div className="posts-feed">Placeholder Posts Feed Page</div>);
-};
-
+import PostsFeed from "./ui/posts-feed";
 export default PostsFeed;
