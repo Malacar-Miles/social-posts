@@ -6,7 +6,6 @@ import { selectCachedPosts, loadMorePosts } from "entities/post";
 import { useEffect } from "react";
 
 const BATCH_SIZE = 10;
-const LAST_POST_ID = 100;
 
 const PostsFeed = () => {
   const dispatch = useDispatch();
@@ -18,7 +17,7 @@ const PostsFeed = () => {
       // Wait for the document to render
       setTimeout(() => {
         document.getElementById(postToComeBackTo.toString())?.scrollIntoView();
-      }, 50);
+      }, 100);
   }, []);
 
   const elementsToDisplay = [];
@@ -36,7 +35,7 @@ const PostsFeed = () => {
 
   const lastRowHandler = () => {
     // Increase the post count when the last post is in view
-    dispatch(loadMorePosts(10));
+    dispatch(loadMorePosts(BATCH_SIZE));
   };
 
   return (
