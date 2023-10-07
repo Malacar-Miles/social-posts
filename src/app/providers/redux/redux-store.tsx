@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { postsReducer } from "entities/post";
+import { cachedPostsReducer } from "entities/post";
 import { Provider } from "react-redux";
 import { jsonPlaceholderApi } from "shared/api";
 
 const store = configureStore({
   reducer: {
-    posts: postsReducer,
+    cachedPosts: cachedPostsReducer,
     [jsonPlaceholderApi.reducerPath]: jsonPlaceholderApi.reducer
   },
   middleware: getDefaultMiddleware =>

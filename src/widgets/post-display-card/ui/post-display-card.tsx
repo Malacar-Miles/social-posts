@@ -1,19 +1,20 @@
 import "./post-display-card.scss";
-import type { Post } from "entities/post/model/types";
+import type { Post } from "entities/post";
+import { useGetPostQuery } from "entities/post";
 import { NavButton } from "shared/ui";
 
 const PostDisplayCard = ({
-  post,
+  postId,
   mode,
   buttonText,
   buttonTarget,
 }: {
-  post: Post;
+  postId: string;
   mode?: string;
   buttonText?: string;
   buttonTarget?: string;
 }) => {
-  const { id, userId, title, body } = post;
+  const { data, isFetching, isSuccess, isError } = useGetPostQuery(postId);
 
   let dynamicClassName = "post-display-card";
   if (mode === "big") dynamicClassName += " full-page";
@@ -21,11 +22,11 @@ const PostDisplayCard = ({
 
   return (
     <div className={dynamicClassName}>
-      {mode !== "big" && <span className="post-id">{id}</span>}
+      {mode !== "big" && <span className="post-id">{postId}</span>}
       <div className="post-wrapper">
-        <h3 className="post-title">{title}</h3>
-        <span className="post-body">{body}</span>
-        <span className="post-user-id">by User {userId}</span>
+        <h3 className="post-title">{data?.title}</h3>
+        <span className="post-body">{data?.body}</span>
+        <span className="post-user-id">by User {data?.userId}</span>
         {buttonTarget && (
           <NavButton targetPath={buttonTarget}>{buttonText}</NavButton>
         )}

@@ -1,24 +1,31 @@
 import "./posts-feed.scss";
-import { useGetAllPostsQuery } from "entities/post";
 import PostDisplayCard from "widgets/post-display-card";
 import { VirtualAndInfiniteScroll } from "shared/ui";
+import { useState } from "react";
+
+const BATCH_SIZE = 10;
+const LAST_POST_ID = 100;
 
 const PostsFeed = () => {
-  const { data } = useGetAllPostsQuery();
+  const [lastLoadedPost, setLastLoadedPost] = useState(20);
 
-  const elementsToDisplay = data?.map((post) => (
-    <article className="post-feed-item" key={post.id}>
-      <PostDisplayCard
-        post={post}
-        mode="small"
-        buttonText="View"
-        buttonTarget={`/posts/${post.id}`}
-      />
-    </article>
-  ));
+  const elementsToDisplay = [];
+  for (let i = 1; i <= lastLoadedPost; i++)
+    elementsToDisplay.push(
+      <article className="post-feed-item" key={i}>
+        <PostDisplayCard
+          postId={i.toString()}
+          mode="small"
+          buttonText="View"
+          buttonTarget={`/posts/${i}`}
+        />
+      </article>
+    );
 
   const lastRowHandler = () => {
-    console.log("lastRowHandler fired");
+    // Increase the post count when the last post is in view
+    const newPostCount = Math.min(lastLoadedPost + BATCH_SIZE, LAST_POST_ID);
+    setLastLoadedPost(newPostCount);
   };
 
   return (

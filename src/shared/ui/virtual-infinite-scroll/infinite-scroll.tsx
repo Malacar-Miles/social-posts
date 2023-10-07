@@ -21,7 +21,7 @@ function InfiniteScroll({
 
   const Elements = listItems.map((listItem, i) => {
     const props: { key?: string; ref?: InViewRef } = {
-      key: listItem.props.key,
+      key: i.toString(),
     };
     if (i === listItems.length - 1) props.ref = lastRowRef;
     return <div {...props}>{listItem}</div>;
