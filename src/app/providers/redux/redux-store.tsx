@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { cachedPostsReducer } from "entities/post";
 import { Provider } from "react-redux";
+import { cachedPostsReducer } from "entities/post";
 import { jsonPlaceholderApi } from "shared/api";
 
 const store = configureStore({

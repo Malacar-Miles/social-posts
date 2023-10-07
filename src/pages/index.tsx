@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
+import PageNotFound from "./page-not-found";
 import PostDetails from "./post-details";
 import PostsFeed from "./posts-feed";
-import PageNotFound from "./page-not-found";
 
 const Routing = () => {
   return (

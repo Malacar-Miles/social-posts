@@ -17,6 +17,7 @@ function InfiniteScroll({
   // if last row is in view, call the last row handler
   useEffect(() => {
     if (lastRowInView) lastRowHandler();
+    // eslint-disable-next-line
   }, [lastRowInView]);
 
   const Elements = listItems.map((listItem, i) => {

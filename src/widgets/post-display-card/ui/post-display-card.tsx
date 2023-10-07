@@ -1,7 +1,7 @@
 import "./post-display-card.scss";
+import { List } from "react-content-loader";
 import { useGetPostQuery } from "entities/post";
 import { NavButton } from "shared/ui";
-import { List } from "react-content-loader";
 
 const PostDisplayCard = ({
   postId,

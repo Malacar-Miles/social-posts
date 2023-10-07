@@ -1,5 +1,5 @@
-import VirtualScrollChild from "./virtual-scroll-child";
 import InfiniteScroll from "./infinite-scroll";
+import VirtualScrollChild from "./virtual-scroll-child";
 
 /*
  * A wrapper component for implementing virtual and

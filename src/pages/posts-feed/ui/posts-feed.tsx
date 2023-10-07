@@ -1,9 +1,9 @@
 import "./posts-feed.scss";
-import PostDisplayCard from "widgets/post-display-card";
-import { VirtualAndInfiniteScroll } from "shared/ui";
-import { useDispatch, useSelector } from "react-redux";
-import { selectCachedPosts, loadMorePosts } from "entities/post";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import PostDisplayCard from "widgets/post-display-card";
+import { selectCachedPosts, loadMorePosts } from "entities/post";
+import { VirtualAndInfiniteScroll } from "shared/ui";
 
 const BATCH_SIZE = 10;
 
@@ -18,6 +18,7 @@ const PostsFeed = () => {
       setTimeout(() => {
         document.getElementById(postToComeBackTo.toString())?.scrollIntoView();
       }, 100);
+      // eslint-disable-next-line
   }, []);
 
   const elementsToDisplay = [];
