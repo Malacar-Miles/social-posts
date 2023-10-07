@@ -1,5 +1,4 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "app/providers/redux/redux-store";
 
 const initialState = {
   cachedPosts: 20,
@@ -23,5 +22,5 @@ export const cachedPostsSlice = createSlice({
 
 export const { loadMorePosts, setPostToComeBackTo } = cachedPostsSlice.actions;
 export const selectCachedPosts = () => {
-  return (state: RootState) => state.cachedPosts;
+  return (state: any) => state.cachedPosts;
 };
