@@ -20,4 +20,4 @@ const NavButton = ({
   );
 };
 
-export default NavButton;
+export { NavButton };

@@ -3,6 +3,7 @@
   background-color: var(--background-color);
   border-radius: 10px;
   padding: 15px 0.8em 10px 0.8em;
+  min-height: 6.8em;
   width: 100%;
   display: flex;
   gap: 0.8em;
@@ -14,9 +15,9 @@
     align-items: center;
     justify-content: center;
     border: 1px solid;
-    width: 1.4em;
-    height: 1.4em;
-    border-radius: 1.4em;
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 1.6em;
   }
 
   &.full-page {

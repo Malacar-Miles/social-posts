@@ -1,6 +1,6 @@
 import "./post-display-card.scss";
 import type { Post } from "entities/post/model/types";
-import NavButton from "shared/ui";
+import { NavButton } from "shared/ui";
 
 const PostDisplayCard = ({
   post,
@@ -15,9 +15,9 @@ const PostDisplayCard = ({
 }) => {
   const { id, userId, title, body } = post;
 
-  const dynamicClassName = `post-display-card ${
-    mode === "big" && "full-page"
-  } ${mode === "small" && "feed-item"}`;
+  let dynamicClassName = "post-display-card";
+  if (mode === "big") dynamicClassName += " full-page";
+  if (mode === "small") dynamicClassName += " feed-item";
 
   return (
     <div className={dynamicClassName}>

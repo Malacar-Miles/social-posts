@@ -1,2 +1,3 @@
-import NavButton from "./nav-button/nav-button";
-export default NavButton;
+export { NavButton } from "./nav-button/nav-button";
+
+export { VirtualAndInfiniteScroll } from "./virtual-infinite-scroll/virtual-infinite-scroll"

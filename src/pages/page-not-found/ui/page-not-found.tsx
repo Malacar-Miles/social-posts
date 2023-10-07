@@ -1,4 +1,4 @@
-import NavButton from "shared/ui";
+import { NavButton } from "shared/ui";
 import "./page-not-found.scss";
 
 const PageNotFound = () => {
