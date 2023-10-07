@@ -28,7 +28,9 @@ const PostDisplayCard = ({
         <span className="post-body">{data?.body}</span>
         <span className="post-user-id">by User {data?.userId}</span>
         {buttonTarget && (
-          <NavButton targetPath={buttonTarget}>{buttonText}</NavButton>
+          <NavButton targetPath={buttonTarget} postId={postId}>
+            {buttonText}
+          </NavButton>
         )}
       </div>
     </div>

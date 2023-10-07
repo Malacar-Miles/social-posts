@@ -1,26 +1,27 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { Post } from "./types";
 import { RootState } from "app/providers/redux/redux-store";
 
-const initialState: Post[] = [];
+const initialState = {
+  cachedPosts: 20,
+  postToComeBackTo: 1,
+};
 
 export const cachedPostsSlice = createSlice({
   name: "cachedPosts",
   initialState,
   reducers: {
-    addPostsToStore: (state, action: PayloadAction<Post[]>) => {
-      const dataToAdd = action.payload;
-      // Only add those post items that aren't already in the store
-      const existingIds = state.map((post) => post.id);
-      const newData = dataToAdd.filter(
-        (post) => !existingIds.includes(post.id)
-      );
-      state = [...state, ...newData];
+    loadMorePosts: (state, action) => {
+      const LAST_POST_ID = 100;
+      const increment = action.payload;
+      state.cachedPosts = Math.min(state.cachedPosts + increment, LAST_POST_ID);
+    },
+    setPostToComeBackTo: (state, action) => {
+      state.postToComeBackTo = action.payload;
     },
   },
 });
 
-export const { addPostsToStore } = cachedPostsSlice.actions;
+export const { loadMorePosts, setPostToComeBackTo } = cachedPostsSlice.actions;
 export const selectCachedPosts = () => {
   return (state: RootState) => state.cachedPosts;
 };

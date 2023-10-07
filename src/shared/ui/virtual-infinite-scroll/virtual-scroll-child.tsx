@@ -8,16 +8,23 @@ import { useInView } from "react-intersection-observer";
 function VirtualScrollChild({
   height,
   children,
+  setId,
 }: {
   height: string;
   children: React.ReactNode;
+  setId?: number | string;
 }) {
   const [ref, inView] = useInView();
   const style = {
-    height: height
+    height: height,
   };
   return (
-    <div className="virtual-scroll-child" style={style} ref={ref}>
+    <div
+      className="virtual-scroll-child"
+      id={setId?.toString()}
+      style={style}
+      ref={ref}
+    >
       {inView ? children : null}
     </div>
   );
